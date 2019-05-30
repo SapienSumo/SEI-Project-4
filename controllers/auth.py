@@ -16,8 +16,8 @@ def register():
         data = schema.load(request.get_json())
         user = User(**data)
         db.commit()
-    except ValidationError as error:
-        return jsonify({'error': error.messages}), 422
+    except ValidationError as err:
+        return jsonify({'message': 'Validation failed', 'errors': err.messages}), 422
 
 
     return jsonify({

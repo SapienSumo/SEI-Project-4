@@ -20,7 +20,7 @@ class Register extends React.Component {
 
   handleChange(e) {
     console.log(e.target.value)
-    const data =  {...this.state.data, [e.target.username]: e.target.value }
+    const data =  {...this.state.data, [e.target.name]: e.target.value }
     this.setState({ data: data })
   }
 
@@ -28,11 +28,12 @@ class Register extends React.Component {
     e.preventDefault()
 
     axios.post('/api/register', this.state.data)
-      .then(() => this.props.history.push('/'))
-      .catch(err => this.setState({errors: err.response.data.errors}))
+      .then(() => this.props.history.push('/login'))
+      .catch((err) => this.setState({errors: err.response.data.errors }))
   }
 
   render() {
+    console.log(this.state)
     return (
       <section>
         <section className="section">
@@ -62,8 +63,6 @@ class Register extends React.Component {
                     {this.state.errors.email && <div className="help is-danger">{this.state.errors.email}</div>}
                   </div>
 
-                  {this.state.errors.dateOfBirth && <div className="help is-danger">{this.state.errors.dateOfBirth}</div>}
-
                   <div className="field">
                     <label className="label">Password</label>
                     <div className="control">
@@ -80,12 +79,12 @@ class Register extends React.Component {
                     <label className="label">Password Confirmation</label>
                     <div className="control">
                       <input className="input"
-                        name="passwordConfirmation"
+                        name="password_confirmation"
                         type="password"
                         placeholder="eg: ••••••••"
                         onChange={this.handleChange} />
                     </div>
-                    {this.state.errors.passwordConfirmation && <div className="help is-danger">{this.state.errors.passwordConfirmation}</div>}
+                    {this.state.errors.password_confirmation && <div className="help is-danger">{this.state.errors.password_confirmation}</div>}
                   </div>
                   <button className="button is-info submit-edit-button">Submit</button>
                 </form>
