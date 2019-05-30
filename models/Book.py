@@ -10,7 +10,7 @@ class Book(db.Entity):
     name = Required(str)
     author = Required('Author')
     genres = Set('Genre')
-    createdBy = Required('User')
+    user = Required('User')
 
 class BookSchema(Schema):
     id = fields.Int(dump_only=True)
@@ -19,12 +19,11 @@ class BookSchema(Schema):
     author_id = fields.Int(load_only=True)
     genres = fields.Nested('GenreSchema', many=True, exclude=('books',), dump_only=True)
     genre_ids = fields.List(fields.Int(), load_only=True)
-    user = fields.Nested('UserSchema', many=True, )
+    user = fields.Nested('UserSchema', )
 
     @post_load
     def load_author(self, data):
         data['author'] = Author.get(id=data['author_id'])
-        data['user'] = User.get(id=data['user_id'])
         del data['author_id']
 
         return data

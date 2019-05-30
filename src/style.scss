@@ -1,0 +1,53 @@
+body {
+  background-image: url('./images/background-images/book-shelf.jpg');
+  background-size: cover;
+  min-height: 100vh;
+}
+
+#background-change {
+  background-position: center;
+  background-size: cover;
+  background-image: contain;
+  transition: background-image 2s ease;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+}
+
+.control {
+  padding-top: 10px;
+}
+
+.headshots {
+    display: flex;
+    justify-content: space-around;
+  }
+
+.home-container {
+  display: flex;
+  align-items: center;
+
+  .title-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    border-radius: 10px;
+
+    .title {
+      font-size: 70px;
+      text-shadow: 2px 2px 2px black;
+    }
+    .subtitle {
+      color: white;
+      font-size: 50px;
+      text-shadow: 2px 2px 2px black;
+    }
+    button {
+      font-size: 20px;
+      width: 130px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+  }
+}

@@ -22,7 +22,7 @@ with db_session():
     Stefan_Zweig = Author(name='Stefan Zweig')
 
     schema = UserSchema()
-    createdBy = User(
+    user = User(
     username='User',
     email='user@user.com',
     password_hash=schema.generate_hash('pass')
@@ -32,49 +32,49 @@ with db_session():
         name='Mortal Dictata',
         author=Karen_Travis,
         genres=[Sci_fi],
-        createdBy=createdBy
+        user=user
     )
 
     Book(
         name='The Thursday War',
         author=Karen_Travis,
         genres=[Sci_fi],
-        createdBy=createdBy
+        user=user
     )
 
     Book(
         name='Sapiens',
         author=Yuval_Noah_Harari,
         genres=[Non_Fiction],
-        createdBy=createdBy
+        user=user
     )
 
     Book(
         name='Homo Deus',
         author=Yuval_Noah_Harari,
         genres=[Non_Fiction],
-        createdBy=createdBy
+        user=user
     )
 
     Book(
         name='1984',
         author=George_Orwell,
         genres=[Sci_fi],
-        createdBy=createdBy
+        user=user
     )
 
     Book(
         name='21 Lessons for the 21st Century',
         author=Yuval_Noah_Harari,
         genres=[Non_Fiction],
-        createdBy=createdBy
+        user=user
     )
 
     Book(
         name='Fantastic Night',
         author=Stefan_Zweig,
         genres=[Fiction],
-        createdBy=createdBy
+        user=user
     )
 
     db.commit()
