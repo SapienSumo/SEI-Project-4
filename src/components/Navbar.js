@@ -15,7 +15,7 @@ class Navbar extends React.Component {
 
   logout() {
     Auth.removeToken()
-    this.props.history.push('/')
+    this.props.history.push('/books')
   }
 
   toggleActive() {
@@ -27,6 +27,22 @@ class Navbar extends React.Component {
       this.setState({ active: false })
     }
   }
+  //   this.state = {
+  //     data: {}
+  //   }
+  //   this.handleSearch = this.handleSearch.bind(this)
+  //   this.handleSubmit = this.handleSubmit.bind(this)
+  // }
+  //
+  // handleSearch(e) {
+  //   this.setState({ data: e.target.value })
+  // }
+  //
+  // handleSubmit(e) {
+  //   e.preventDefault()
+  //
+  //   this.props.history.push(`/search/${this.state.data}`)
+  //  }
 
   render() {
     return (
@@ -34,7 +50,7 @@ class Navbar extends React.Component {
         <div className="container">
           <div className="navbar-brand">
 
-            <Link to="/books" className="navbar-item navbar-home">APOCHRYPHA</Link>
+            <Link to="/" className="navbar-item navbar-home">APOCHRYPHA</Link>
             <div className="field has-addons">
               <div className="control">
                 <input className="input" type="text" placeholder="Find a repository"></input>
@@ -64,9 +80,7 @@ class Navbar extends React.Component {
               {/* Right-hand links*/}
               {/* Method for Navbar components */}
 
-              <Link to="/booksshow" className="navbar-item">Books</Link>
-
-              {!Auth.isAuthenticated() && <Link to="/register" className="navbar-item">Sign Up</Link>}
+              <Link to="/books" className="navbar-item">Books</Link>
 
               {!Auth.isAuthenticated() && <Link to="/login" className="navbar-item">Login</Link>}
 

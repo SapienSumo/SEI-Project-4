@@ -9,7 +9,7 @@ class BooksShow extends React.Component {
     super(props) // because this component needs `this.props`
 
     this.state = {
-      cheese: null
+      book: null
     }
 
     this.handleDelete = this.handleDelete.bind(this)
@@ -18,7 +18,7 @@ class BooksShow extends React.Component {
   componentDidMount() {
 
     axios.get(`/api/books/${this.props.match.params.id}`)
-      .then(res => this.setState({ name: res.data }))
+      .then(res => this.setState({ book: res.data }))
   }
 
   handleDelete() {
@@ -30,21 +30,21 @@ class BooksShow extends React.Component {
   }
 
   canModify() {
-    return Auth.isAuthenticated() && Auth.getPayload().sub === this.state.name.user._id
+    return Auth.isAuthenticated() && Auth.getPayload().sub === this.state.book.user._id
   }
 
   render() {
-    if(!this.state.name) return null
+    if(!this.state.book) return null
     return (
       <section className="section">
         <div className="container">
           <div className="level">
             <div className="level-left">
-              <h1 className="title is-1">{this.state.name.author}</h1>
+              <h1 className="title is-1">{this.state.book.name}</h1>
             </div>
             {this.canModify() &&
               <div className="level-right">
-                <Link to={`/books/${this.state.name._id}/edit`} className="button is-primary">Edit</Link>
+                <Link to={`/books/${this.state.book._id}/edit`} className="button is-primary">Edit</Link>
                 <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
               </div>
             }
@@ -53,16 +53,12 @@ class BooksShow extends React.Component {
 
           <div className="columns is-multiline">
             <div className="column is-half-desktop is-full-tablet">
-              <figure className="image">
-                <img src={this.state.name} alt={this.state.name.author} />
-              </figure>
             </div>
 
             <div className="column is-half-desktop is-full-tablet">
-              <h2 className="title is-2">{this.state.name.genres}</h2>
+              <h2 className="title is-2">{this.state.book.author}</h2>
               <hr />
-              <h2 className="title is-2">Tasting Notes</h2>
-              <p className="is-size-4">{this.state.name.genres}</p>
+              <p className="is-size-4">{this.state.book.name}</p>
             </div>
           </div>
         </div>

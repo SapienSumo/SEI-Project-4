@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import Books from './Books'
+import BookCard from './BookCard'
 
 class BooksIndex extends React.Component {
 
@@ -9,14 +9,14 @@ class BooksIndex extends React.Component {
     super()
 
     this.state = {
-      name: []
+      books: []
     }
   }
 
   componentDidMount() {
     fetch('/api/books')
       .then(res => res.json())
-      .then(data => this.setState({ cheeses: data }))
+      .then(data => this.setState({ books: data }))
   }
 
   render() {
@@ -24,10 +24,10 @@ class BooksIndex extends React.Component {
       <section className="section">
         <div className="container">
           <div className="columns is-multiline">
-            {this.state.name.map(name =>
-              <div key={name._id} className="column is-one-quarter-desktop is-one-third-tablet">
-                <Link to={`/books/${name._id}`}>
-                  <Books {...name} />
+            {this.state.books.map(book =>
+              <div key={book.id} className="column is-one-quarter-desktop is-one-third-tablet">
+                <Link to={`/books/${book.id}`}>
+                  <BookCard {...book} />
                 </Link>
               </div>
             )}

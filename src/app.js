@@ -1,13 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { HashRouter as Router, Route} from 'react-router-dom'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 import axios from 'axios'
 
-import Home from './components/Home'
 
+import Home from './components/Home'
 import Register from './auth/Register'
-import Navbar from './components/Navbar'
 import Login from './auth/Login'
+import Navbar from './components/Navbar'
+import BooksIndex from './components/BooksIndex'
 import BooksShow from './components/BooksShow'
 import Archive from './components/Archive'
 
@@ -27,11 +28,14 @@ class App extends React.Component {
       <Router>
         <main>
           <Navbar />
-          <Route path="/books/:id" component={BooksShow}/>
-          <Route path="/archive" component={Archive}/>
-          <Route path="/register" component={Register}/>
-          <Route path="/login" component={Login}/>
-          <Route path="/books" component={Home}/>
+          <Switch>
+            <Route path="/books/:id" component={BooksShow}/>
+            <Route path="/books" component={BooksIndex}/>
+            <Route path="/archive" component={Archive}/>
+            <Route path="/register" component={Register}/>
+            <Route path="/login" component={Login}/>
+            <Route path="/" component={Home}/>
+          </Switch>
         </main>
       </Router>
     )

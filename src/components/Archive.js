@@ -4,7 +4,7 @@ const Archive = () => {
 
   return (
     <main className="Archive">
-      <section className="section aboutus-background">
+      <section className="section archive-background">
         <div className="container">
           <h1 className="title is-1 has-text-light"> WELCOME TO THE ARCHIVE</h1>
           <hr />
