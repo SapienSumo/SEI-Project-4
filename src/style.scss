@@ -1,5 +1,5 @@
 body {
-  background-image: url('./images/background-images/book-shelf.jpg');
+  background-image: url('http://wallpapercrafter.com/uploads/posts/51633-shelves-with-various-books-of-the-bible___on-the-shelf.jpg');
   background-size: cover;
   min-height: 100vh;
 }
@@ -20,19 +20,34 @@ h1 {
   padding-top: 10px;
 }
 
+
 .headshots {
     display: flex;
     justify-content: space-around;
   }
 
+.logohome {
+  display: flex;
+  align-items: center;
+}
+
 .home-container {
   display: flex;
   align-items: center;
+  background-position: center;
+  background-size: cover;
+  background-image: contain;
+  height: 100vh;
+
 
   .title-container {
     background-color: rgba(0, 0, 0, 0.3);
     max-width: 600px;
     border-radius: 10px;
+
+    h1 {
+      justify-content: center;
+    }
 
     .title {
       font-size: 70px;

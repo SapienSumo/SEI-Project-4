@@ -34,7 +34,7 @@ class Navbar extends React.Component {
         <div className="container">
           <div className="navbar-brand">
 
-            <Link to="/" className="navbar-item navbar-home">APOCHRYPHA</Link>
+            <Link to="/books" className="navbar-item navbar-home">APOCHRYPHA</Link>
             <div className="field has-addons">
               <div className="control">
                 <input className="input" type="text" placeholder="Find a repository"></input>
@@ -63,6 +63,8 @@ class Navbar extends React.Component {
 
               {/* Right-hand links*/}
               {/* Method for Navbar components */}
+
+              <Link to="/booksshow" className="navbar-item">Books</Link>
 
               {!Auth.isAuthenticated() && <Link to="/register" className="navbar-item">Sign Up</Link>}
 

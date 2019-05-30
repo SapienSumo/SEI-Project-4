@@ -19,7 +19,6 @@ class Register extends React.Component {
   //function for converting the date of birth to an age in years
 
   handleChange(e) {
-    console.log(e.target.value)
     const data =  {...this.state.data, [e.target.name]: e.target.value }
     this.setState({ data: data })
   }
@@ -33,7 +32,6 @@ class Register extends React.Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <section>
         <section className="section">

@@ -27,9 +27,9 @@ class Home extends React.Component {
         backgroundImage: `url(${images[this.state.currentImg]})`
       }}>
         <div className="container title-container has-text-centered">
-          <h1 className="title logohome is-1"> APOCHRYPHA </h1>
+          <h1 className="title logohome has-text-light is-1"> APOCHRYPHA </h1>
           <h2 className="subtitle is-2"> FIND YOUR VICE </h2>
-          {!Auth.isAuthenticated() && <Link to="/register"><button className="button is-danger">Sign Up</button></Link> || <Link to="/aboutus"><button className="button is-danger">ARCHIVES</button></Link>}
+          {!Auth.isAuthenticated() && <Link to="/register"><button className="button is-warning">Sign Up</button></Link> || <Link to="/aboutus"><button className="button is-warning">ARCHIVES</button></Link>}
         </div>
       </section>
     )
