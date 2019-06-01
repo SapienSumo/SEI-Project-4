@@ -44,8 +44,8 @@ class BooksShow extends React.Component {
             </div>
             {this.canModify() &&
               <div className="level-right">
-                <Link to={`/books/${this.state.book.id}/edit`} className="button is-primary">Edit</Link>
-                <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
+                <Link to={`/books/${this.state.book.id}/edit`} className="button is-light">Edit</Link>
+                <button className="button is-dark" onClick={this.handleDelete}>Delete</button>
               </div>
             }
           </div>

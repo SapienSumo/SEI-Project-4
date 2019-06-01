@@ -31,6 +31,7 @@ class App extends React.Component {
         <main>
           <Navbar />
           <Switch>
+            <Route path="/search/:query" component={BooksIndex} />
             <Route path="/books/:id/edit" component={BookEdit}/>
             <Route path="/books/new" component={BookNew} />
             <Route path="/books/:id" component={BooksShow}/>

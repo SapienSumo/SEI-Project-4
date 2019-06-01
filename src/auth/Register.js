@@ -41,7 +41,7 @@ class Register extends React.Component {
                 <form onSubmit={this.handleSubmit}>
 
                   <div className="field">
-                    <label className="label">Username</label>
+                    <label className="label has-text-white">Username</label>
                     <div className="control">
                       <input className="input"
                         name="username"
@@ -52,7 +52,7 @@ class Register extends React.Component {
                   </div>
 
                   <div className="field">
-                    <label className="label">Email</label>
+                    <label className="label has-text-white">Email</label>
                     <div className="control">
                       <input className="input"
                         name="email"
@@ -62,7 +62,7 @@ class Register extends React.Component {
                   </div>
 
                   <div className="field">
-                    <label className="label">Password</label>
+                    <label className="label has-text-white">Password</label>
                     <div className="control">
                       <input className="input"
                         name="password"
@@ -74,7 +74,7 @@ class Register extends React.Component {
                   </div>
 
                   <div className="field">
-                    <label className="label">Password Confirmation</label>
+                    <label className="label has-text-white">Password Confirmation</label>
                     <div className="control">
                       <input className="input"
                         name="password_confirmation"
@@ -84,7 +84,7 @@ class Register extends React.Component {
                     </div>
                     {this.state.errors.password_confirmation && <div className="help is-danger">{this.state.errors.password_confirmation}</div>}
                   </div>
-                  <button className="button is-info submit-edit-button">Submit</button>
+                  <button className="button is-warning submit-edit-button">Submit</button>
                 </form>
               </div>
             </div>

@@ -72,10 +72,11 @@ class BookEdit extends React.Component {
                 </div>
 
                 <div className="control">
+                  <p className="has-text-white">Select an Author</p>
                   <div className="select is-loading">
                     <select name="author_id" onChange={this.handleChange}>
                       {this.state.author.map(author =>
-                        <option value={author.id} key={author.id}>{author.name}</option>
+                        <option value={author._id} key={author._id}>{author.name}</option>
                       )}
                     </select>
                   </div>
@@ -97,7 +98,7 @@ class BookEdit extends React.Component {
 
                 </div>
 
-                <button className="button is-primary">Submit</button>
+                <button className="button is-warning">Submit</button>
               </form>
             </div>
           </div>

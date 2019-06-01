@@ -46,7 +46,7 @@ class Login extends React.Component {
                 <form onSubmit={this.handleSubmit}>
 
                   <div className="field">
-                    <label className="label">Email</label>
+                    <label className="label has-text-white">Email</label>
                     <div className="control">
                       <input className="input" name="email" placeholder="eg: leela@planetexpress.nnyc" onChange={this.handleChange} />
                     </div>
@@ -54,7 +54,7 @@ class Login extends React.Component {
                   </div>
 
                   <div className="field">
-                    <label className="label">Password</label>
+                    <label className="label has-text-white">Password</label>
                     <div className="control">
                       <input className="input" name="password" type="password" placeholder="eg: ••••••••" onChange={this.handleChange} />
                     </div>
@@ -63,7 +63,7 @@ class Login extends React.Component {
 
                   </div>
                   <br/>
-                  <button className="button is-danger submit-edit-button">Submit</button>
+                  <button className="button is-warning submit-edit-button">Submit</button>
                 </form>
               </div>
             </div>

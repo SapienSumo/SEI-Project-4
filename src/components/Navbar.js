@@ -11,11 +11,13 @@ class Navbar extends React.Component {
 
     this.logout = this.logout.bind(this)
     this.toggleActive = this.toggleActive.bind(this)
+    this.handleSearch = this.handleSearch.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   logout() {
     Auth.removeToken()
-    this.props.history.push('/books')
+    this.props.history.push('/')
   }
 
   toggleActive() {
@@ -27,22 +29,16 @@ class Navbar extends React.Component {
       this.setState({ active: false })
     }
   }
-  //   this.state = {
-  //     data: {}
-  //   }
-  //   this.handleSearch = this.handleSearch.bind(this)
-  //   this.handleSubmit = this.handleSubmit.bind(this)
-  // }
-  //
-  // handleSearch(e) {
-  //   this.setState({ data: e.target.value })
-  // }
-  //
-  // handleSubmit(e) {
-  //   e.preventDefault()
-  //
-  //   this.props.history.push(`/search/${this.state.data}`)
-  //  }
+
+  handleSearch(e) {
+    this.setState({ data: e.target.value })
+  }
+
+  handleSubmit(e) {
+    e.preventDefault()
+
+    this.props.history.push(`/search/${this.state.data}`)
+  }
 
   render() {
     return (

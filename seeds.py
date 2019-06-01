@@ -14,12 +14,29 @@ with db_session():
     Fantasy = Genre(name='Fantasy')
     Non_Fiction = Genre(name='Non Fiction')
     Fiction = Genre(name='Fiction')
+    Memoir = Genre(name='Memoir')
+    Novel = Genre(name='Novel')
+    Crime_Fiction = Genre(name='Crime Fiction')
+    Literary_fiction = Genre(name='Literary fiction')
+    Autobiography = Genre(name='Autobiography')
+    Mystery_fiction = Genre(name='Mystery fiction')
+    Anthology = Genre(name='Anthology')
+    Magical_Realism = Genre(name='Magical Realism')
+    Gothic_fiction = Genre(name='Gothic fiction')
+    Alternate_history = Genre(name='Alternate history')
+    History = Genre(name='History')
+    Graphic_novel = Genre(name='Graphic novel')
+    Hard_science_fiction = Genre(name='Hard science fiction')
+
 
     Karen_Travis = Author(name='Karen Travis')
     JRR_Tolkien = Author(name='JRR Tolkien')
     Yuval_Noah_Harari = Author(name='Yuval Noah Harari')
     George_Orwell = Author(name='George Orwell')
     Stefan_Zweig = Author(name='Stefan Zweig')
+    Charlotte_Brontë = Author(name='Charlotte Brontë')
+    Michelle_Obama = Author(name='Michelle Obama')
+
 
     schema = UserSchema()
     user = User(
@@ -37,7 +54,7 @@ with db_session():
     )
 
     Book(
-        name='The Thursday War',
+        name='',
         image='./images/Thursday-war.jpg',
         author=Karen_Travis,
         genres=[Sci_fi],
@@ -81,6 +98,174 @@ with db_session():
         image='./images/fantastic.jpg',
         author=Stefan_Zweig,
         genres=[Fiction],
+        user=user
+    )
+
+    Book(
+        name='The Thursday War',
+        image='./images/Thursday-war.jpg',
+        author=Karen_Travis,
+        genres=[Sci_fi],
+        user=user
+    )
+
+    Book(
+        name='Charlotte Brontë',
+        image='./images/jane_eyre.jpg',
+        author=Charlotte_Brontë,
+        genres=[Novel],
+        user=user
+    )
+
+    Book(
+        name='Becoming',
+        image='./images/Michelle_Obama.jpg',
+        author=,
+        genres=,
+        user=user
+    )
+
+    Book(
+        name='',
+        image='',
+        author=,
+        genres=,
+        user=user
+    )
+
+    Book(
+        name='',
+        image='',
+        author=,
+        genres=,
+        user=user
+    )
+
+    Book(
+        name='',
+        image='',
+        author=,
+        genres=,
+        user=user
+    )
+
+    Book(
+        name='',
+        image='',
+        author=,
+        genres=,
+        user=user
+    )
+
+    Book(
+        name='',
+        image='',
+        author=,
+        genres=,
+        user=user
+    )
+
+    Book(
+        name='',
+        image='',
+        author=,
+        genres=,
+        user=user
+    )
+
+    Book(
+        name='',
+        image='',
+        author=,
+        genres=,
+        user=user
+    )
+
+    Book(
+        name='',
+        image='',
+        author=,
+        genres=,
+        user=user
+    )
+
+    Book(
+        name='',
+        image='',
+        author=,
+        genres=,
+        user=user
+    )
+
+    Book(
+        name='',
+        image='',
+        author=,
+        genres=,
+        user=user
+    )
+
+    Book(
+        name='',
+        image='',
+        author=,
+        genres=,
+        user=user
+    )
+
+    Book(
+        name='',
+        image='',
+        author=,
+        genres=,
+        user=user
+    )
+
+    Book(
+        name='',
+        image='',
+        author=,
+        genres=,
+        user=user
+    )
+
+    Book(
+        name='',
+        image='',
+        author=,
+        genres=,
+        user=user
+    )
+
+    Book(
+        name='',
+        image='',
+        author=,
+        genres=,
+        user=user
+    )
+
+    Book(
+        name='',
+        image='',
+        author=,
+        genres=,
+        user=user
+    )
+
+    Book(
+        name='',
+        image='',
+        author=,
+        genres=,
+        user=user
+    )
+
+    Book(
+        name='',
+        image='',
+        author=,
+        genres=,
         user=user
     )
 

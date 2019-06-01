@@ -11,6 +11,21 @@ body {
   transition: background-image 2s ease;
 }
 
+img.is-rounded {
+    display: flex;
+    justify-content: space-around;
+    display: block;
+    height: 160px;
+    width: 160px;
+    border-radius: 10px;
+}
+
+.card-content{
+  p {
+      text-align: center;
+  }
+}
+
 h1 {
   display: flex;
   align-items: center;
@@ -21,7 +36,7 @@ h1 {
 }
 
 
-.headshots {
+.books {
     display: flex;
     justify-content: space-around;
   }

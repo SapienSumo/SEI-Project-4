@@ -42,7 +42,7 @@ class BookNew extends React.Component {
             <div className="column is-half-desktop is-two-thirds-tablet">
               <form onSubmit={this.handleSubmit}>
                 <div className="field">
-                  <label className="label">Name</label>
+                  <label className="label has-text-white">Name</label>
                   <div className="control">
                     <input
                       className="input"
@@ -57,7 +57,7 @@ class BookNew extends React.Component {
                 </div>
 
                 <div className="field">
-                  <label className="label">Image</label>
+                  <label className="label has-text-white">Image</label>
                   <div className="control">
                     <input
                       className="input"
