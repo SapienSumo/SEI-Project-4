@@ -30,6 +30,7 @@ with db_session():
 
     Book(
         name='Mortal Dictata',
+        image='./images/mortal-dictata.jpg',
         author=Karen_Travis,
         genres=[Sci_fi],
         user=user
@@ -37,6 +38,7 @@ with db_session():
 
     Book(
         name='The Thursday War',
+        image='./images/Thursday-war.jpg',
         author=Karen_Travis,
         genres=[Sci_fi],
         user=user
@@ -44,6 +46,7 @@ with db_session():
 
     Book(
         name='Sapiens',
+        image='./images/sapiens.jpg',
         author=Yuval_Noah_Harari,
         genres=[Non_Fiction],
         user=user
@@ -51,6 +54,7 @@ with db_session():
 
     Book(
         name='Homo Deus',
+        image='./images/homo-deus.jpg',
         author=Yuval_Noah_Harari,
         genres=[Non_Fiction],
         user=user
@@ -58,6 +62,7 @@ with db_session():
 
     Book(
         name='1984',
+        image='./images/1984.jpg',
         author=George_Orwell,
         genres=[Sci_fi],
         user=user
@@ -65,6 +70,7 @@ with db_session():
 
     Book(
         name='21 Lessons for the 21st Century',
+        image='./images/21-lessons.jpg',
         author=Yuval_Noah_Harari,
         genres=[Non_Fiction],
         user=user
@@ -72,6 +78,7 @@ with db_session():
 
     Book(
         name='Fantastic Night',
+        image='./images/fantastic.jpg',
         author=Stefan_Zweig,
         genres=[Fiction],
         user=user

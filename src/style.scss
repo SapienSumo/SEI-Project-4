@@ -31,6 +31,15 @@ h1 {
   align-items: center;
 }
 
+.card-header {
+  justify-content: center;
+  text-decoration: none;
+}
+
+.card.bookcover {
+  border-radius: 10px;
+}
+
 .home-container {
   display: flex;
   align-items: center;
@@ -48,6 +57,7 @@ h1 {
     h1 {
       justify-content: center;
     }
+
 
     .title {
       font-size: 70px;

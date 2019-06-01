@@ -30,7 +30,7 @@ class BooksShow extends React.Component {
   }
 
   canModify() {
-    return Auth.isAuthenticated() && Auth.getPayload().sub === this.state.book.user._id
+    return Auth.isAuthenticated() && Auth.getPayload().sub === this.state.book.user.id
   }
 
   render() {
@@ -40,11 +40,11 @@ class BooksShow extends React.Component {
         <div className="container">
           <div className="level">
             <div className="level-left">
-              <h1 className="title is-1">{this.state.book.name}</h1>
+              <h1 className="title is-1 has-text-white">{this.state.book.name}</h1>
             </div>
             {this.canModify() &&
               <div className="level-right">
-                <Link to={`/books/${this.state.book._id}/edit`} className="button is-primary">Edit</Link>
+                <Link to={`/books/${this.state.book.id}/edit`} className="button is-primary">Edit</Link>
                 <button className="button is-danger" onClick={this.handleDelete}>Delete</button>
               </div>
             }
@@ -53,12 +53,14 @@ class BooksShow extends React.Component {
 
           <div className="columns is-multiline">
             <div className="column is-half-desktop is-full-tablet">
+              <figure className="image is-2by3">
+                <img src={this.state.book.image} alt={this.state.book.name} />
+              </figure>
             </div>
 
             <div className="column is-half-desktop is-full-tablet">
-              <h2 className="title is-2">{this.state.book.author}</h2>
+              <h2 className="title is-2 has-text-white">{this.state.book.author.name}</h2>
               <hr />
-              <p className="is-size-4">{this.state.book.name}</p>
             </div>
           </div>
         </div>

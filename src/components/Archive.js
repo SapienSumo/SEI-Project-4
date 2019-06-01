@@ -6,9 +6,9 @@ const Archive = () => {
     <main className="Archive">
       <section className="section archive-background">
         <div className="container">
-          <h1 className="title is-1 has-text-light"> WELCOME TO THE ARCHIVE</h1>
+          <h1 className="title is-1 has-text-light"> WELCOME</h1>
           <hr />
-          <h3 className="subtitle is-2 has-text-light"> FIND YOUR BOOK </h3>
+          <h3 className="subtitle is-2 has-text-light"> LEARN MORE </h3>
           <hr className="paragraph"/>
 
           <div className="columns headshots is-vcentered">
