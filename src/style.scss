@@ -6,6 +6,20 @@ body {
   min-height: 100vh;
 }
 
+h1 {
+  display: flex;
+  align-items: center;
+}
+
+button.is-warning {
+  styles woooo
+
+  &:hover {
+    background-color: red;
+    color: white;
+  }
+}
+
 
 #background-change {
   background-position: center;
@@ -16,6 +30,15 @@ body {
 
 .section {
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+.column {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  max-width: 222px;
 }
 
 .img-showpage {
@@ -46,6 +69,14 @@ body {
 //   height: 150px;
 // }
 
+figure.image {
+  display: flex;
+  height: 350px;
+  max-height: 350px;
+  // background-position: center;
+  // background-size: contain;
+}
+
 img.is-rounded {
     display: flex;
     justify-content: space-around;
@@ -58,11 +89,6 @@ img.is-rounded {
   p {
       text-align: center;
   }
-}
-
-h1 {
-  display: flex;
-  align-items: center;
 }
 
 .control {

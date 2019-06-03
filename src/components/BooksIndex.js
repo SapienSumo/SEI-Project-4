@@ -39,7 +39,7 @@ class BooksIndex extends React.Component {
           </div>
           <div className="columns is-multiline">
             {this.filteredBooks().map(book =>
-              <div key={book.id} className="column is-one-quarter-desktop is-one-third-tablet">
+              <div key={book.id} className="column is-3-desktop is-one-third-tablet">
                 <Link to={`/books/${book.id}`}>
                   <BookCard {...book} />
                 </Link>
