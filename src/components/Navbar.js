@@ -7,12 +7,15 @@ class Navbar extends React.Component {
   constructor(props) {
     super(props)
 
-    this.state = { active: false }
+    this.state = {
+      active: false,
+      name: '3'
+    }
 
     this.logout = this.logout.bind(this)
     this.toggleActive = this.toggleActive.bind(this)
     this.handleSearch = this.handleSearch.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+
   }
 
   logout() {
@@ -31,16 +34,12 @@ class Navbar extends React.Component {
   }
 
   handleSearch(e) {
-    this.setState({ data: e.target.value })
-  }
-
-  handleSubmit(e) {
-    e.preventDefault()
-
-    this.props.history.push(`/search/${this.state.data}`)
+    const data = {...this.state.data, [e.target.name]: e.target.value }
+    this.setState({ data })
   }
 
   render() {
+    console.log(this.state.data)
     return (
       <nav className="navbar is-dark">
         <div className="container">
@@ -49,12 +48,11 @@ class Navbar extends React.Component {
             <Link to="/" className="navbar-item navbar-home">APOCHRYPHA</Link>
             <div className="field has-addons">
               <div className="control">
-                <input className="input" type="text" placeholder="Find a repository"></input>
+                <input className="input" type="text" name="name" placeholder="Search..." onChange={this.handleSearch}></input>
               </div>
               <div className="control">
-                <a className="button is-warning">
-                  Search
-                </a>
+                <Link to={`/books/${this.state.name}`}> <button className="button is-warning">Search</button> </Link>
+
               </div>
             </div>
             <a role="button" className={`navbar-burger ${this.state.active ? 'is-active' : ''}`}
@@ -71,14 +69,15 @@ class Navbar extends React.Component {
 
             <div className="navbar-end">
 
-              <Link to="/archive" className="navbar-item">Archives</Link>
+              <Link to="/archive" className="navbar-item">Learn</Link>
 
               {/* Right-hand links*/}
               {/* Method for Navbar components */}
 
-              <Link to="/books" className="navbar-item">Books</Link>
+              <Link to="/books" className="navbar-item">Archives</Link>
 
               {!Auth.isAuthenticated() && <Link to="/login" className="navbar-item">Login</Link>}
+              {Auth.isAuthenticated() && <Link to={`/books/new/${Auth.getPayload().sub}`} className="navbar-item">Add a Book</Link>}
 
               {/* Register and login will now disappear once logged in */}
               {Auth.isAuthenticated() && <a className="navbar-item" onClick={this.logout}>Logout</a>}

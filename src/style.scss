@@ -1,8 +1,10 @@
 body {
   background-image: url('./images/background-images/library-warm.jpg');
   background-size: cover;
+  background-image: contain;
   min-height: 100vh;
 }
+
 
 #background-change {
   background-position: center;

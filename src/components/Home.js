@@ -29,7 +29,7 @@ class Home extends React.Component {
         <div className="container title-container has-text-centered">
           <h1 className="title logohome has-text-light is-1"> APOCHRYPHA </h1>
           <h2 className="subtitle is-2"> START SEARCHING </h2>
-          {!Auth.isAuthenticated() && <Link to="/register"><button className="button is-warning">Sign Up</button></Link> || <Link to="/books"><button className="button is-warning">BOOKS</button></Link>}
+          {!Auth.isAuthenticated() && <Link to="/register"><button className="button is-warning">Sign Up</button></Link> || <Link to="/books"><button className="button is-warning">ARCHIVES</button></Link>}
         </div>
       </section>
     )
