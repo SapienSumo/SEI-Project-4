@@ -7,7 +7,12 @@ const BookCard = ({ name, image }) => {
       </div>
       <div className="card-image">
         <figure className="image">
-          <img src={image} className="archive-images" alt={name}/>
+          <div
+            className="archive-images"
+            alt={name}
+            style={{backgroundImage: `url(${image})`}}
+          >
+          </div>
         </figure>
       </div>
       <div className="card-content">
@@ -20,3 +25,6 @@ const BookCard = ({ name, image }) => {
 }
 
 export default BookCard
+
+
+// img src={image} className="archive-images" alt={name}/>

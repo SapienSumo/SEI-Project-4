@@ -159,7 +159,7 @@ with db_session():
     )
 
     Book(
-        name='The Autobiography of Benjamin Franklin',
+        name='Benjamin Franklin',
         image='./images/ben.jpg',
         author=Benjamin_Franklin,
         genres=Autobiography,
@@ -167,7 +167,7 @@ with db_session():
     )
 
     Book(
-        name='Kingdom of the Blind: A Chief Inspector Gamache Novel',
+        name='Kingdom of the Blind',
         image='./images/blind.jpg',
         author=Louise_Penny,
         genres=Mystery,
@@ -183,7 +183,7 @@ with db_session():
     )
 
     Book(
-        name='Cries of the Forgotten: A Murder Mystery of Post-Apartheid South Africa',
+        name='Cries of the Forgotten',
         image='./images/cries.jpg',
         author=Percy_Makhuba,
         genres=Magical_Realism,
@@ -207,7 +207,7 @@ with db_session():
     )
 
     Book(
-        name='The Silk Roads: A New History of the World',
+        name='The Silk Roads',
         image='./images/slik.jpg',
         author=Peter_Frankopan,
         genres=History,

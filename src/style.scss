@@ -69,12 +69,12 @@ button.is-warning {
 //   height: 150px;
 // }
 
-figure.image {
+div.archive-images {
   display: flex;
   height: 350px;
-  max-height: 350px;
-  // background-position: center;
-  // background-size: contain;
+  max-height: 345px;
+  background-position: center;
+  background-size: cover;
 }
 
 img.is-rounded {
