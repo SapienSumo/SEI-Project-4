@@ -68,7 +68,6 @@ class BookEdit extends React.Component {
                       value={this.state.data.name || ''}
                     />
                   </div>
-
                 </div>
 
                 <div className="control">

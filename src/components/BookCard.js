@@ -1,20 +1,18 @@
 import React from 'react'
 
-const BookCard = ({ name, genres, author, image }) => {
+const BookCard = ({ name, image }) => {
   return (
     <div className="card bookcover">
       <div className="card-header">
-        <h3 className="card-header-tilte">{name}</h3>
       </div>
       <div className="card-image">
         <figure className="image">
-          <img src={image} alt={name}/>
+          <img src={image} className="archive-images" alt={name}/>
         </figure>
       </div>
       <div className="card-content">
         <div className="content">
-          <p>{author.name}</p>
-          <p>{genres.name}</p>
+          <p>{name}</p>
         </div>
       </div>
     </div>

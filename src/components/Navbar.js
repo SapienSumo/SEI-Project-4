@@ -14,7 +14,6 @@ class Navbar extends React.Component {
 
     this.logout = this.logout.bind(this)
     this.toggleActive = this.toggleActive.bind(this)
-    this.handleSearch = this.handleSearch.bind(this)
 
   }
 
@@ -46,15 +45,6 @@ class Navbar extends React.Component {
           <div className="navbar-brand">
 
             <Link to="/" className="navbar-item navbar-home">APOCHRYPHA</Link>
-            <div className="field has-addons">
-              <div className="control">
-                <input className="input" type="text" name="name" placeholder="Search..." onChange={this.handleSearch}></input>
-              </div>
-              <div className="control">
-                <Link to={`/books/${this.state.name}`}> <button className="button is-warning">Search</button> </Link>
-
-              </div>
-            </div>
             <a role="button" className={`navbar-burger ${this.state.active ? 'is-active' : ''}`}
               onClick={this.toggleActive}>
               <span aria-hidden="true"></span>

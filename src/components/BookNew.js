@@ -9,11 +9,22 @@ class BookNew extends React.Component {
 
     this.state = {
       data: {},
+      author: [],
       errors: {}
     }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  componentDidMount() {
+
+    axios(`/api/books/${this.props.match.params.id}`)
+      .then(res => this.setState({ data: res.data }))
+
+    axios('/api/authors')
+      .then(res => this.setState({ author: res.data }))
+
   }
 
   handleChange(e) {
@@ -56,13 +67,24 @@ class BookNew extends React.Component {
 
                 </div>
 
+                <div className="control">
+                  <p className="has-text-white">Select an Author</p>
+                  <div className="select is-loading">
+                    <select name="author_id" onChange={this.handleChange}>
+                      {this.state.author.map(author =>
+                        <option value={author._id} key={author._id}>{author.name}</option>
+                      )}
+                    </select>
+                  </div>
+                </div>
+
                 <div className="field">
                   <label className="label has-text-white">Image</label>
                   <div className="control">
                     <input
                       className="input"
                       name="image"
-                      placeholder="eg: https://cheesebored.com/images/brie.png"
+                      placeholder=""
                       onChange={this.handleChange}
                     />
                   </div>

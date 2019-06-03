@@ -11,6 +11,8 @@ class BooksIndex extends React.Component {
     this.state = {
       books: []
     }
+
+    this.handleSearch = this.handleSearch.bind(this)
   }
 
   componentDidMount() {
@@ -19,12 +21,24 @@ class BooksIndex extends React.Component {
       .then(data => this.setState({ books: data }))
   }
 
+  handleSearch(e) {
+    this.setState({ term: e.target.value })
+  }
+
+  filteredBooks() {
+    const re = new RegExp(this.state.term, 'i')
+    return this.state.books.filter(book => re.test(book.name))
+  }
+
   render() {
     return (
       <section className="section">
         <div className="container">
+          <div className="control">
+            <input className="input searchbar" type="text" name="name" placeholder="Search..." onChange={this.handleSearch}></input>
+          </div>
           <div className="columns is-multiline">
-            {this.state.books.map(book =>
+            {this.filteredBooks().map(book =>
               <div key={book.id} className="column is-one-quarter-desktop is-one-third-tablet">
                 <Link to={`/books/${book.id}`}>
                   <BookCard {...book} />

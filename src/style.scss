@@ -1,7 +1,8 @@
 body {
-  background-image: url('./images/background-images/library-warm.jpg');
+  background-image: url('./images/background-images/many-books.jpg');
   background-size: cover;
   background-image: contain;
+  background-attachment: fixed;
   min-height: 100vh;
 }
 
@@ -13,13 +14,44 @@ body {
   transition: background-image 2s ease;
 }
 
+.section {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.img-showpage {
+
+}
+
+.showpage {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.searchbar {
+  display: flex;
+  justify-content: space-around;
+}
+
+.archive-images {
+  display: flex;
+  flex: space-around;
+  width: 222px;
+  height: 335px;
+}
+
+.control {
+  margin-bottom: 25px;
+}
+
+// .img-showpage {
+//   height: 150px;
+// }
+
 img.is-rounded {
     display: flex;
     justify-content: space-around;
     display: block;
     height: 160px;
     width: 160px;
-    border-radius: 10px;
 }
 
 .card-content{
