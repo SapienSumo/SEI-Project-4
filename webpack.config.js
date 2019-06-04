@@ -1,7 +1,13 @@
 const path = require('path')
 const webpack = require('webpack')
-
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
+const EnvPlugin = process.env.NODE_ENV === 'production' ?  (
+  new webpack.EnvironmentPlugin({ ...process.env })
+) : (
+  new Dotenv()
+)
 
 module.exports = {
   entry: './src/app.js',
@@ -16,23 +22,14 @@ module.exports = {
       { test: /\.css$/, loader: ['style-loader', 'css-loader'] },
       { test: /\.s(a|c)ss$/, loader: ['style-loader', 'css-loader', 'sass-loader'] },
       {
-        test: /\.(jpe?g|png|gif|svg)$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: './images/[name].[ext]'
-          }
-        }
-      },
-      {
-        test: /\.(woff|woff2)$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: './fonts/[name].[ext]'
-          }
+        test: /\.(gif|jpe?g|png)$/,
+        loader: 'url-loader?limit=25000',
+        query: {
+          limit: 10000,
+          name: 'static/media/images/[name].[hash:8].[ext]'
         }
       }
+
     ]
   },
   devServer: {
@@ -47,10 +44,14 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    EnvPlugin,
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       filename: 'index.html',
       inject: 'body'
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from: 'src/images', to: 'images'}
+    ])
   ]
 }
