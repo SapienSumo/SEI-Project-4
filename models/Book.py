@@ -12,11 +12,13 @@ class Book(db.Entity):
     genres = Set('Genre')
     user = Required('User')
     image = Required(str)
+    blurb = Required(str)
 
 class BookSchema(Schema):
     id = fields.Int(dump_only=True)
     name = fields.Str(required=True)
     image = fields.Str(required=False)
+    blurb = fields.Str(required=False)
     author = fields.Nested('AuthorSchema', exclude=('books',), dump_only=True)
     author_id = fields.Int(load_only=True)
     genres = fields.Nested('GenreSchema', many=True, exclude=('books',), dump_only=True)

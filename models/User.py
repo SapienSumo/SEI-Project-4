@@ -10,7 +10,7 @@ class User(db.Entity):
     username = Required(str, unique=True)
     email = Required(str, unique=True)
     password_hash = Required(str)
-    sandwiches = Set('Book')
+    books = Set('Book')
 
     def is_password_valid(self, plaintext):
         return bcrypt.checkpw(plaintext.encode('utf8'), self.password_hash.encode('utf8'))

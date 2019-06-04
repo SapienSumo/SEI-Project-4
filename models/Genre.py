@@ -10,7 +10,7 @@ class GenreSchema(Schema):
     id = fields.Int(dump_only=True)
     name = fields.Str(required=True)
     books = fields.Nested('BookSchema', many=True, exclude=('genre',), dump_only=True)
-    sandwich_ids = fields.List(fields.Int(), load_only=True)
+    book_ids = fields.List(fields.Int(), load_only=True)
 
     @post_load
     def load_genres(self, data):

@@ -34,6 +34,8 @@ class BooksIndex extends React.Component {
     return (
       <section className="section">
         <div className="container">
+          <h1 className="title is-1 has-text-light"> Start Searching...</h1>
+
           <div className="control">
             <input className="input searchbar" type="text" name="name" placeholder="Search..." onChange={this.handleSearch}></input>
           </div>

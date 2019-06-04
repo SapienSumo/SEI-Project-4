@@ -11,13 +11,10 @@ h1 {
   align-items: center;
 }
 
-button.is-warning {
-  styles woooo
 
-  &:hover {
-    background-color: red;
-    color: white;
-  }
+.image.is-2by3 img {
+  height: 50%;
+  width: 50%;
 }
 
 
@@ -30,21 +27,37 @@ button.is-warning {
 
 .section {
   background-color: rgba(0, 0, 0, 0.4);
+  min-height: 100vh;
 }
 
 .column {
-  display: flex;
   justify-content: center;
+}
+
+p.has-text-white {
+    color: white !important;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+section.show-background {
+  overflow: hidden;
 }
 
 .card {
   max-width: 222px;
 }
 
-div.img-showpage {
-  background-color: rgba(0, 0, 0, 0.8);
-  width: 222px;
-  height: 335px;
+figure.img-showpage {
+  width: 41vw;
+  height: 60vh;
+}
+
+#show-image {
+  top: 1rem;
+  // border: 15px solid black;
+  width: 25vw;
+  height: 70vh;
+  left: 8rem;
 }
 
 .searchbar {
@@ -59,17 +72,16 @@ div.img-showpage {
   height: 335px;
 }
 
-.control {
-  margin-bottom: 25px;
-}
-
-
 div.archive-images {
   display: flex;
   height: 350px;
   max-height: 345px;
   background-position: center;
   background-size: cover;
+}
+
+.control {
+  margin-bottom: 25px;
 }
 
 img.is-rounded {

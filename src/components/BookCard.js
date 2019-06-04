@@ -16,7 +16,7 @@ const BookCard = ({ name, image }) => {
         </figure>
       </div>
       <div className="card-content">
-        <div className="content">
+        <div className="content is-dark">
           <p>{name}</p>
         </div>
       </div>
@@ -25,6 +25,3 @@ const BookCard = ({ name, image }) => {
 }
 
 export default BookCard
-
-
-// img src={image} className="archive-images" alt={name}/>
