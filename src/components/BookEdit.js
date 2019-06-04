@@ -93,8 +93,6 @@ class BookEdit extends React.Component {
                     />
                   </div>
 
-
-
                 </div>
 
                 <button className="button is-warning">Submit</button>

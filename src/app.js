@@ -13,6 +13,7 @@ import BookEdit from './components/BookEdit'
 import BookNew from './components/BookNew'
 import BooksShow from './components/BooksShow'
 import Archive from './components/Archive'
+import Loading from './components/Loading'
 
 import 'bulma'
 import './style.scss'
@@ -25,7 +26,7 @@ class App extends React.Component {
   }
 
   render() {
-    if(!this.state) return <p>Loading...</p>
+    if(!this.state) return < Loading />
     return (
       <Router>
         <main>

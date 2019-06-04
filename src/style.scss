@@ -41,12 +41,10 @@ button.is-warning {
   max-width: 222px;
 }
 
-.img-showpage {
-
-}
-
-.showpage {
+div.img-showpage {
   background-color: rgba(0, 0, 0, 0.8);
+  width: 222px;
+  height: 335px;
 }
 
 .searchbar {
@@ -65,9 +63,6 @@ button.is-warning {
   margin-bottom: 25px;
 }
 
-// .img-showpage {
-//   height: 150px;
-// }
 
 div.archive-images {
   display: flex;
