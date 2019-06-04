@@ -37,7 +37,7 @@ class BooksIndex extends React.Component {
           <h1 className="title is-1 has-text-light"> Start Searching...</h1>
 
           <div className="control">
-            <input className="input searchbar" type="text" name="name" placeholder="Search..." onChange={this.handleSearch}></input>
+            <input className="input searchbar is-full-width" type="text" name="name" placeholder="Search..." onChange={this.handleSearch}></input>
           </div>
           <div className="columns is-multiline">
             {this.filteredBooks().map(book =>

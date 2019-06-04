@@ -9,4 +9,4 @@ class Author(db.Entity):
 class AuthorSchema(Schema):
     id = fields.Int(dump_only=True)
     name = fields.Str(required=True)
-    books = fields.Nested('BookSchema', many=True, exclude=('genres',))
+    books = fields.Nested('BookSchema', many=True, exclude=('author',))

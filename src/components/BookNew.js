@@ -8,9 +8,11 @@ class BookNew extends React.Component {
     super()
 
     this.state = {
-      data: {},
-      author: [],
-      errors: {}
+      data: {
+        author_id: 0
+      },
+      authors: [],
+      errors: null
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -19,11 +21,8 @@ class BookNew extends React.Component {
 
   componentDidMount() {
 
-    axios(`/api/books/${this.props.match.params.id}`)
-      .then(res => this.setState({ data: res.data }))
-
     axios('/api/authors')
-      .then(res => this.setState({ author: res.data }))
+      .then(res => this.setState({ authors: res.data }))
 
   }
 
@@ -40,12 +39,12 @@ class BookNew extends React.Component {
     axios.post('/api/books', this.state.data, {
       headers: { 'Authorization': `Bearer ${token}` }
     })
-      .then(() => this.props.history.push('/books'))
+      .then(() => this.props.history.push('/api/books'))
       .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
   render() {
-    if(!this.state) return null
+    console.log(this.state.data)
     return (
       <section className="section">
         <div className="container">
@@ -53,26 +52,27 @@ class BookNew extends React.Component {
             <div className="column is-half-desktop is-two-thirds-tablet">
               <form onSubmit={this.handleSubmit}>
                 <div className="field">
-                  <label className="label has-text-white">Title</label>
+                  <label className="label has-text-white">Book Title</label>
                   <div className="control">
                     <input
                       className="input"
                       name="name"
-                      placeholder="eg: Brie"
+                      placeholder=""
                       onChange={this.handleChange}
                     />
                   </div>
 
-                  {this.state.errors.name && <div className="help is-danger">{this.state.errors.name}</div>}
+                  {this.state.errors && this.state.errors.name && <div className="help is-danger">{this.state.errors.name}</div>}
 
                 </div>
 
                 <div className="control">
-                  <p className="has-text-white">Select an Author</p>
-                  <div className="select is-loading">
+                  <label className="label has-text-white">Select An Author</label>
+                  <div className="select ">
                     <select name="author_id" onChange={this.handleChange}>
-                      {this.state.author.map(author =>
-                        <option value={author._id} key={author._id}>{author.name}</option>
+                      <option value={0}>Please select an author...</option>
+                      {this.state.authors.map(author =>
+                        <option value={author.id} key={author.id}>{author.name}</option>
                       )}
                     </select>
                   </div>
@@ -89,11 +89,25 @@ class BookNew extends React.Component {
                     />
                   </div>
 
-                  {this.state.errors.Image && <div className="help is-danger">{this.state.errors.Image}</div>}
+                  {this.state.errors && this.state.errors.Image && <div className="help is-danger">{this.state.errors.Image}</div>}
 
                 </div>
 
-                <button className="button is-primary">Submit</button>
+                <div className="field">
+                  <label className="label has-text-white">Blurb</label>
+                  <div className="control">
+                    <textarea className="textarea"
+                      name="blurb"
+                      placeholder=""
+                      onChange={this.handleChange}
+                    />
+                  </div>
+
+                  {this.state.errors && this.state.errors.blurb && <div className="help is-danger">{this.state.errors.blurb}</div>}
+
+                </div>
+
+                <button className="button is-warning">Submit</button>
               </form>
             </div>
           </div>

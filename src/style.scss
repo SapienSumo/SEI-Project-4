@@ -17,6 +17,13 @@ h1 {
   width: 50%;
 }
 
+.footer {
+    background-color: #363636;
+  }
+
+.select select {
+  width: 650px;
+}
 
 #background-change {
   background-position: center;
@@ -25,9 +32,14 @@ h1 {
   transition: background-image 2s ease;
 }
 
+input.searchbar {
+  max-width: 30%;
+}
+
 .section {
   background-color: rgba(0, 0, 0, 0.4);
   min-height: 100vh;
+  padding-left: 6.5rem;
 }
 
 .column {

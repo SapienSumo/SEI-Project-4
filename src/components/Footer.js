@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer has-text-white">
       <div className="content has-text-centered has-text-white">
         <p>
-          <strong className="has-text-white">Apochrypha &copy;</strong> by | <a href="http://localhost:8000/#/aboutus">Apochrypha &#8482; </a>| Created at GA
+          <strong className="has-text-white">Apochrypha &copy;</strong> by | <a href="http://localhost:8000/#/archive">APOCH &#8482; </a>| Created at GA
         </p>
       </div>
     </footer>

@@ -9,8 +9,8 @@ class BookEdit extends React.Component {
 
     this.state = {
       data: {},
-      errors: {},
-      author: []
+      author: [],
+      errors: {}
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -20,7 +20,10 @@ class BookEdit extends React.Component {
   componentDidMount() {
 
     axios(`/api/books/${this.props.match.params.id}`)
-      .then(res => this.setState({ data: res.data }))
+      .then(res => {
+        res.data.author_id = res.data.author.id
+        this.setState({ data: res.data })
+      })
 
     axios('/api/authors')
       .then(res => this.setState({ author: res.data }))
@@ -30,7 +33,6 @@ class BookEdit extends React.Component {
   handleChange(e) {
     const data = {...this.state.data, [e.target.name]: e.target.value }
     this.setState({ data })
-    console.log(this.state.data)
   }
 
   handleSubmit(e) {
@@ -38,18 +40,19 @@ class BookEdit extends React.Component {
 
     const token = Auth.getToken('token')
 
-    const data = {...this.state.data, [e.target.name]: e.target.value }
-    this.setState({ data })
+    const data = this.state.data
+    delete data['user']
+    delete data['id']
+    delete data['author']
 
-    axios.put(`/api/books/${this.state.data.id}`, this.state.data, {
+    axios.put(`/api/books/${this.props.match.params.id}`, this.state.data, {
       headers: { 'Authorization': `Bearer ${token}` }
     })
-      .then(() => this.props.history.push('/books'))
+      .then(() => this.props.history.push('/api/books'))
       .catch(err => this.setState({ errors: err.response.data.errors }))
   }
 
   render() {
-    console.log(this.state.data)
     if(!this.state) return null
     return (
       <section className="section">
@@ -71,11 +74,12 @@ class BookEdit extends React.Component {
                 </div>
 
                 <div className="control">
-                  <p className="has-text-white">Select an Author</p>
-                  <div className="select is-loading">
-                    <select name="author_id" onChange={this.handleChange}>
+                  <label className="label has-text-white">Select An Author</label>
+                  <div className="select ">
+                    <select name="author_id" onChange={this.handleChange} value={this.state.data.author_id}>
+                      <option value={0}>Please select an author...</option>
                       {this.state.author.map(author =>
-                        <option value={author._id} key={author._id}>{author.name}</option>
+                        <option value={author.id} key={author.id}>{author.name}</option>
                       )}
                     </select>
                   </div>
@@ -87,10 +91,22 @@ class BookEdit extends React.Component {
                     <input
                       className="input"
                       name="image"
-                      placeholder="https://bulma.io/images/placeholders/128x128.png"
+                      placeholder=""
                       onChange={this.handleChange}
                       value={this.state.data.image || ''}
                     />
+                  </div>
+
+                  <div className="field">
+                    <label className="label has-text-white">Blurb</label>
+                    <div className="control">
+                      <textarea className="textarea"
+                        name="blurb"
+                        placeholder=""
+                        onChange={this.handleChange}
+                        value={this.state.data.blurb}
+                      />
+                    </div>
                   </div>
 
                 </div>
@@ -106,6 +122,3 @@ class BookEdit extends React.Component {
 }
 
 export default BookEdit
-
-// {this.state.errors.image && <div className="help is-danger">{this.state.errors.image}</div>}
-// {this.state.errors.name && <div className="help is-danger">{this.state.errors.name}</div>}
