@@ -30,7 +30,6 @@ The premise of my Web App, wasn’t to try and create something that had never b
 When breaking down this project, I decided to do so in what seemed like the most logical order. First I tackled the database/API, then I moved onto the backend, where I built my User model and other respective methods, structured my seeds file and got started on my .js files. Once this structure was in place, and I had something to work with.
 
 
-
 A challenge for me initially was getting my edit function to work properly. The reason why this proved to be so challenging was primarily because of the data that was being sent to the frontend from my backend. In order the edit a book, I need to be able to get the book by ID but the information that was being posted was incorrect because not all fields were being acquired, specifically my authors. In order to fix this problem, I had to create a dropdown and populate it with all the authors in my seeds.
 
 
