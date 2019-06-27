@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import BookCard from './Bookcard'
+import BookCard from './BookCard'
 
 class BooksIndex extends React.Component {
 
