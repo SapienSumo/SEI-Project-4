@@ -4,7 +4,6 @@ from marshmallow import Schema, fields, post_load
 
 from .User import User
 from .Author import Author
-from .Genre import Genre
 
 class Book(db.Entity):
     name = Required(str)

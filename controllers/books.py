@@ -18,16 +18,14 @@ def index():
 @router.route('/books/<int:book_id>', methods=['GET'])
 @db_session
 def show(book_id):
-    # This will serialize our data
+
     schema = BookSchema()
-    # This gets a sandwich by ID
+
     book = Book.get(id=book_id)
 
-    # If we can't find a sandwich, send a 404 response
     if not book:
         abort(404)
 
-    # otherwise, send back the sandwich data as JSON
     return schema.dumps(book)
 
 @router.route('/books', methods=['POST'])

@@ -48,7 +48,7 @@ class Login extends React.Component {
                   <div className="field">
                     <label className="label has-text-white">Email</label>
                     <div className="control">
-                      <input className="input" name="email" placeholder="eg: leela@planetexpress.nnyc" onChange={this.handleChange} />
+                      <input className="input" name="email" placeholder="" onChange={this.handleChange} />
                     </div>
 
                   </div>

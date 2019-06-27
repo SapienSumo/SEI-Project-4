@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 const CommentCard = ({ content, user }) => {
   return (
     <Link to ={`/users/${user.id}`}>
+      <Link to ={`/users/${user.id}`}> </Link>
       <article className="media">
 
 
@@ -14,6 +15,7 @@ const CommentCard = ({ content, user }) => {
           <div className="content">
             <p>
               <strong>{user.username}</strong> <small>{content.createdAt}</small>
+              <small>{user.username}</small>
               <br/>
               {content}
             </p>

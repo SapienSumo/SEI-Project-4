@@ -13,11 +13,10 @@ def secure_route(func):
             g.current_user = User.get(id=payload['sub'])
 
         except jwt.ExpiredSignatureError:
-            # token has expired
+
             return jsonify({'message': 'Token expired'}), 401
 
         except Exception:
-            # any other error has occurred
             return jsonify({'message': 'Unauthorized'}), 401
 
         return func(*args, **kwargs)

@@ -8,8 +8,7 @@ class Navbar extends React.Component {
     super(props)
 
     this.state = {
-      active: false,
-      name: '3'
+      active: false
     }
 
     this.logout = this.logout.bind(this)
@@ -55,21 +54,14 @@ class Navbar extends React.Component {
 
           <div className={`navbar-menu ${this.state.active ? 'is-active' : ''}`}>
 
-            {/* Everything else*/}
-
             <div className="navbar-end">
 
               <Link to="/archive" className="navbar-item">Learn</Link>
-
-              {/* Right-hand links*/}
-              {/* Method for Navbar components */}
 
               <Link to="/books" className="navbar-item">Archives</Link>
 
               {!Auth.isAuthenticated() && <Link to="/login" className="navbar-item">Login</Link>}
               {Auth.isAuthenticated() && <Link to="/books/new" className="navbar-item">Add a Book</Link>}
-
-              {/* Register and login will now disappear once logged in */}
               {Auth.isAuthenticated() && <a className="navbar-item" onClick={this.logout}>Logout</a>}
 
             </div>
@@ -79,5 +71,5 @@ class Navbar extends React.Component {
     )
   }
 }
-// `withRouter` gives the Navbar `history` via props
+
 export default withRouter(Navbar)

@@ -45,7 +45,7 @@ class Register extends React.Component {
                     <div className="control">
                       <input className="input"
                         name="username"
-                        placeholder="eg: leela3000"
+                        placeholder=""
                         onChange={this.handleChange} />
                     </div>
                     {this.state.errors.username && <div className="help is-danger">{this.state.errors.username}</div>}
@@ -56,7 +56,7 @@ class Register extends React.Component {
                     <div className="control">
                       <input className="input"
                         name="email"
-                        placeholder="eg: leela@planetexpress.nnyc" onChange={this.handleChange} />
+                        placeholder="" onChange={this.handleChange} />
                     </div>
                     {this.state.errors.email && <div className="help is-danger">{this.state.errors.email}</div>}
                   </div>
@@ -67,9 +67,11 @@ class Register extends React.Component {
                       <input className="input"
                         name="password"
                         type="password"
-                        placeholder="eg: ••••••••"
+                        placeholder="••••••••"
                         onChange={this.handleChange} />
+
                     </div>
+                    
                     {this.state.errors.password && <div className="help is-danger">{this.state.errors.password}</div>}
                   </div>
 
@@ -79,7 +81,7 @@ class Register extends React.Component {
                       <input className="input"
                         name="password_confirmation"
                         type="password"
-                        placeholder="eg: ••••••••"
+                        placeholder="••••••••"
                         onChange={this.handleChange} />
                     </div>
                     {this.state.errors.password_confirmation && <div className="help is-danger">{this.state.errors.password_confirmation}</div>}
