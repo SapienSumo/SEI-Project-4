@@ -59,11 +59,12 @@ To achieve this, I had to create a separate file path of images in an array that
 
 
 ## Future Features
-Initially I wanted far more in my project but with only a weak, there was only so much I could do. 
--Fully functional review and comment features
--Ranking System for users
--Upvote feature
--Save feature
+Initially I wanted more features in my project but with only a weak, there was only so much I could do. 
+Some features I will add in the future: 
+- Fully functional review and commenting system
+- Ranking System for users
+- Upvote feature
+- Save book feature
 
 ## Timeframe
 7 days
