@@ -33,22 +33,29 @@ A challenge for me initially was getting my edit function to work properly. The 
 
 When it came to the homepage, I had a couple of different approaches. Initially I thought it would be better to have a static image on the page, with some information describing my website to users with a CTA (Call to action) that would prompt the user to sign up. In the end I settled for keeping the CTA as it was but instead of having a static background image, I decided to have the images on the homepage transition to different images on a set interval of 4 seconds.
 
-To achieve this, I had to create a separate file path of images in an array that would be displayed on the homepage background. Then import those images into the home file path and then set them on an interval of 4 seconds on an ease transition method in scss. To make the visual transition look seamless.
+To achieve this, I had to create a separate file path of images in an array that will be displayed on the homepage background. Then import those images into the home file path and then set them on an interval of 4 seconds on an ease transition method in scss. To make the visual transition look seamless.
 ![homepage](https://i.imgur.com/62CSZFi.jpg)
 
 
 ## Challenges
-- Managing expectations
-- Getting forms to look how I wanted them to
-- Time Constraints
+- Managing expectations: This was essential when it came time to decide on which features to keep and which ones to abandon because of the time available. More often than not I wanted to make sure that I could get as many features as I wanted, in, as possible. Though, that was not always something I could do and as a result I found it quite challenging. 
+
+- Getting the user ranking system in place
+
+- Time Constraints: I had one week to work on this project, and so I was not able to do all the things I wanted to do. This was always to be expected when starting the project, nevertheless it was still a challenge at times, to decide on which things I should allocate the most time and attention. 
 
 
 ## Wins
-- Reaching C.R.U.D
-- Attention grabbing homepage
-- Fuully functoinal search feature
-- User friendly features: loading page, infopage - register to login, to user profile, to - edit profile or matches etc.
-- I had fun making it
+- Reaching C.R.U.D (Create Read Update Delete)
+- Attention grabbing homepage (Image transition feature)
+- Fully functional search feature (Enabling the ability to search through the archives using RegEx)
+- Loading page
+- Infopage
+- Register
+- Login
+- Edit
+- Delete
+
 
 
 ## Future Features
