@@ -62,7 +62,8 @@ To achieve this, I had to create a separate file path of images in an array that
 Initially I wanted far more in my project but with only a weak, there was only so much I could do. 
 -Fully functional review and comment features
 -Ranking System for users
--Upvote feature# General Assembly SEI-Project-4: Online Library (Apochrypha)
+-Upvote feature
+-Save feature
 
 ## Timeframe
 7 days
