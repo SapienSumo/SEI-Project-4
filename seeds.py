@@ -32,6 +32,7 @@ with db_session():
 
 
     Karen_Travis = Author(name='Karen Travis')
+    Madeline_Miller = Author(name='Madeline Miller')
     JRR_Tolkien = Author(name='JRR Tolkien')
     Yuval_Noah_Harari = Author(name='Yuval Noah Harari')
     George_Orwell = Author(name='George Orwell')

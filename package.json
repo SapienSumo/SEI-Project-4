@@ -6,7 +6,7 @@
   "scripts": {
     "run:client": "webpack-dev-server --mode=development",
     "run:server": "pipenv run flask run --port=4000",
-    "run:seeds.py": "yarn seeds.py",
+    "seeds": "yarn seeds",
     "build": "webpack -p"
   },
   "dependencies": {
